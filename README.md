@@ -1,135 +1,48 @@
-# Mini-Twitter Functionality Checklist
+# Twitter-Mini Project
 
-## Phase 1: Project Setup and Database Design
-- [ ] Set up development environment (IDE, database, etc.)
-- [ ] Create a GitHub repository for version control
-- [ ] Design database schema
-  - [ ] Define `User` entity with attributes (id, username, email, password, etc.)
-  - [ ] Define `Post` entity with attributes (id, user_id, content, timestamp)
-  - [ ] Define `Followers` relationship (user_id, follower_id)
+## Overview
 
-## Phase 2: Backend Development - Basic Features
-### User Authentication
-- [ ] Implement user registration
-  - [ ] Collect user data (username, email, password)
-  - [ ] Validate data (unique email, password criteria, etc.)
-  - [ ] Encrypt password before saving to database
-  - [ ] Return success or error message
-- [ ] Implement user login
-  - [ ] Verify email/password
-  - [ ] Generate authentication token (JWT)
-  - [ ] Return token and user details
-- [ ] Implement middleware for authentication token verification
+Twitter-Mini is an engaging, hands-on project designed for those new to Computer Science or CS students seeking to understand essential concepts in the field. This project, a simplified version of a Twitter-like application, covers databases, software development pipelines, CI/CD, cloud computing, testing, automation, and much more, offering flexibility in the choice of programming languages and technologies.
 
-### Testing: User Authentication
-- [ ] Write unit tests for registration
-- [ ] Write unit tests for login
-- [ ] Write unit tests for middleware authentication
+## Objectives
 
-## Phase 3: Backend Development - Core Features
-### Posts Management
-- [ ] API to create a post
-  - [ ] Ensure user is authenticated
-  - [ ] Validate post content
-  - [ ] Save post to database
-  - [ ] Return post details
-- [ ] API to view a user's posts
-  - [ ] Retrieve and return posts by user_id
-- [ ] API to delete a post
-  - [ ] Ensure user is authenticated and owns the post
-  - [ ] Delete post from database
+- **Core Web Development Concepts:** Basics of front-end and back-end development, API usage, CRUD operations, and user interface design without being tied to a specific technology stack.
+- **Database Exploration:** Management and operations, focusing on data modeling and manipulation across various database systems.
+- **CI/CD Pipeline Implementation:** Experience with Continuous Integration and Continuous Deployment workflows to understand software release automation.
+- **Cloud Services Utilization:** Use of cloud platforms for application and database hosting, exploring scalability and infrastructure concepts.
+- **Advanced Features Implementation:** Addition of real-time updates, search capabilities, and user authentication to enhance application functionality.
+- **Performance Optimization:** Techniques for improving application performance through caching, efficient queries, and stress testing.
+- **Deployment Mastery:** Deployment strategies and tools for a seamless transition from development to production.
 
-### User Relationships
-- [ ] API to follow another user
-  - [ ] Ensure user is authenticated
-  - [ ] Update `Followers` relationship in database
-- [ ] API to unfollow another user
-  - [ ] Ensure user is authenticated
-  - [ ] Remove `Followers` relationship from database
-- [ ] API to list followers and following
-  - [ ] Retrieve and return users following and followed by a user
+## Project Phases
 
-### Testing: Core Features
-- [ ] Write unit tests for creating, viewing, and deleting posts
-- [ ] Write unit tests for following/unfollowing users
-- [ ] Write unit tests for listing followers and following
+1. **Foundation Building:** Initial setup with user registration, post creation, and basic viewing functionalities.
+2. **Feature Enhancements:** Introduction of likes, user profile customization, and image uploads.
+3. **Search and Scalability:** Scalability improvements and search features, including the potential use of Elasticsearch for advanced search capabilities.
+4. **Optimization and Deployment:** Focus on stress testing, optimization, and employing deployment strategies for a robust application.
 
-## Phase 4: Frontend Development (Optional)
-- [ ] Set up frontend project structure
-- [ ] Implement login page
-  - [ ] Form for email/password input
-  - [ ] Submit form and handle response
-- [ ] Implement registration page
-  - [ ] Form for username, email, password input
-  - [ ] Submit form and handle response
-- [ ] Implement main feed
-  - [ ] Display logged-in user's posts
-  - [ ] Option to create new posts
-- [ ] Implement user profile page
-  - [ ] Display user information and posts
-  - [ ] Follow/unfollow button and functionality
+## Technologies
 
-## Phase 5: Integration and Testing
-- [ ] Ensure frontend communicates correctly with backend APIs
-- [ ] Perform integration testing
-- [ ] Conduct user acceptance testing (UAT)
+Participants are encouraged to use any technology stack they are comfortable with or interested in learning, including but not limited to:
+- Any programming language (e.g., Python, Java, Ruby) for backend development
+- Any frontend framework or library
+- Any SQL or NoSQL database for data management
+- Elasticsearch for search functionality (optional)
+- CI/CD tools of choice for automation
+- Any cloud platform for hosting and deployment
 
-## Phase 6: Documentation and Deployment
-- [ ] Document the API endpoints
-- [ ] Document the database schema
-- [ ] Deploy the application to a cloud service
+## Learning Outcomes
 
-# Future Plan Checklist for Mini-Twitter Application
+Participants will gain hands-on experience with software development and deployment, covering efficient coding practices, database management, testing importance, deployment automation, and cloud services usage.
 
-## Phase 1: Enhancements to Core Features
-- [ ] **Likes for Posts:**
-  - [ ] Implement a `Like` model in the Node.js backend to track likes on posts.
-  - [ ] Create API endpoints for liking/unliking a post, ensuring to update the likes count dynamically.
+## Getting Started
 
-- [ ] **Basic User Profile Settings:**
-  - [ ] Allow users to update their profile information such as username, bio, and email through a dedicated API endpoint.
-  - [ ] Implement file upload functionality for profile pictures, considering image storage and retrieval strategies.
+Follow the detailed checklists provided for each project part to guide your development. Start with Part 1 to establish core functionalities before progressing to Part 2 for advanced features and deployment techniques.
 
-## Phase 2: Introduction to Elasticsearch
-- [ ] **Setup Elasticsearch:**
-  - [ ] Install Elasticsearch and integrate it with the Node.js application.
-  - [ ] Familiarize with Elasticsearch concepts such as indices, documents, and mappings.
+## Contribution
 
-- [ ] **Indexing Posts:**
-  - [ ] Design and create an Elasticsearch index for posts, ensuring to define appropriate mappings for efficient searching.
-  - [ ] Implement backend logic to index new posts, update existing ones, and delete as necessary.
+Your insights and improvements are welcome, promoting a collaborative learning environment. Dive into the project, tackle its challenges, and share your achievements.
 
-- [ ] **Search Functionality:**
-  - [ ] Develop an API endpoint for keyword search in posts, leveraging Elasticsearch's full-text search capabilities.
-  - [ ] Integrate search functionality in the UI if a frontend is being developed.
+## License
 
-### Elasticsearch Tips:
-- **Use Analyzers:** Customize analyzers in Elasticsearch to improve search results based on the specific needs of your application (e.g., lowercase filters, stop words).
-- **Test Different Queries:** Experiment with various query types (match, term, bool, etc.) to achieve the desired search precision and recall.
-- **Monitor Performance:** Utilize Elasticsearch's monitoring tools to observe query performance and adjust indices/mappings accordingly.
-
-## Phase 3: Stress Testing, Optimization, and Deployment
-- [ ] **Node.js-specific Stress Testing Tools:**
-  - [ ] Explore and use stress testing tools such as `Artillery` or `k6`. These tools are well-suited for testing Node.js applications, allowing you to simulate high traffic and analyze the app's performance.
-  - [ ] Implement test scripts to simulate various scenarios (user login, posting, searching) and analyze throughput, latency, and error rates.
-
-- [ ] **Analysis and Optimization:**
-  - [ ] Based on stress testing results, identify bottlenecks (e.g., slow database queries, inefficient API endpoints).
-  - [ ] Optimize by implementing caching, refining database queries, or adjusting server configurations.
-
-- [ ] **Deployment on AWS:**
-  - [ ] Use Terraform or AWS CloudFormation to define and manage infrastructure as code. This allows for the automated setup of required AWS services (EC2 instances, RDS for databases, S3 for storage, etc.).
-  - [ ] Automate application deployment using Ansible. Create Ansible playbooks to configure AWS instances, deploy the Node.js application, and ensure dependencies are installed.
-
-### AWS Deployment Tips:
-- **Automate Everything:** Use Ansible for configuration management and Terraform/CloudFormation for infrastructure provisioning to make deployment and scaling more efficient.
-- **Secure Your Setup:** Always use AWS IAM roles and policies to manage access to AWS resources securely. Utilize security groups to control access to EC2 instances.
-- **Monitor and Scale:** Leverage AWS CloudWatch for monitoring application performance and set up auto-scaling to adjust resources based on demand.
-
-## Additional Notes:
-- **Version Control:** Regularly commit and document changes in GitHub to track the evolution of the project and facilitate collaboration.
-- **Continuous Learning:** Encourage the exploration of official documentation and community resources for deeper insights into Node.js, Elasticsearch, Ansible, Terraform/CloudFormation, and AWS services.
-- **Community and Support:** Utilize forums, Stack Overflow, and other community platforms for support and to share knowledge gained throughout the project.
-
-This enhanced plan aims to provide a comprehensive learning journey, from application development with Node.js to deploying and managing infrastructure on AWS, along with introducing essential DevOps practices. The inclusion of stress testing and Elasticsearch tips ensures the student gains practical insights into optimizing application performance and search capabilities.
-
+This project is under the GNU GENERAL PUBLIC LICENSE v3. See the LICENSE file for details.
